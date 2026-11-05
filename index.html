@@ -285,6 +285,9 @@ html[data-view="console"] body { padding: 0; background: #0a1316; color: #e2eef0
 .card .row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; overflow-wrap: anywhere; }
 .cbtn { font: inherit; font-size: 0.8125rem; padding: 3px 12px; color: var(--c-acc); background: transparent; border: 1px solid var(--c-line); border-radius: 6px; cursor: pointer; }
 .cbtn:hover { border-color: var(--c-acc); }
+.p-name { font-size: 1.25rem; font-weight: 600; }
+.p-txt { margin: 0 0 6px; font-size: 0.9375rem; color: #c5d6d9; }
+.p-open { width: fit-content; font-family: var(--font-mono); font-size: 13px; }
 .c-end { text-align: center; font-family: var(--font-mono); font-size: 12.5px; color: var(--c-mute); }
 .c-end .cbtn { margin-left: 6px; }
 @media (max-width: 760px) {
@@ -509,6 +512,28 @@ html[data-view="console"] #dl { background: #0f1c20; color: #e2eef0; border-colo
           <li><button class="chip" type="button">Video and audio editing</button></li>
         </ul></dd>
       </dl>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="body">
+      <details class="job" open>
+        <summary><h3>MultiCam</h3><span class="meta"><a href="https://goodsirtimothy.github.io/MultiCam/" target="_blank" rel="noopener">goodsirtimothy.github.io/MultiCam</a></span></summary>
+        <div class="job-body">
+          <ul class="bullets">
+            <li>Built with Claude: an installable camera web app that records video and photo bursts together so a once-in-a-lifetime moment is captured both ways, with tap-to-focus, pinch zoom, self-timer, auto-catch on sound or motion, and a built-in photo and video editor.</li>
+          </ul>
+        </div>
+      </details>
+      <details class="job" open>
+        <summary><h3>CSV-ODS-Editor</h3><span class="meta"><a href="https://goodsirtimothy.github.io/CSV-ODS-Editor/" target="_blank" rel="noopener">goodsirtimothy.github.io/CSV-ODS-Editor</a></span></summary>
+        <div class="job-body">
+          <ul class="bullets">
+            <li>Built with Claude: a single-file spreadsheet editor for CSV, ODS, and XLSX that runs in the browser, with autosave and recovery, filters, number and date formats, dropdown lists, and themes.</li>
+          </ul>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -1109,6 +1134,27 @@ html[data-view="console"] #dl { background: #0f1c20; color: #e2eef0; border-colo
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && root.getAttribute('data-view') === 'console') { skBtns.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); emptyEv(); }
   });
+
+  /* projects (read from the Classic markup) */
+  var projEls = [].slice.call(document.querySelectorAll('#projects details.job'));
+  if (projEls.length) {
+    var proj = h('div', 'rv');
+    proj.appendChild(h('h2', 'c-h', 'Projects'));
+    proj.appendChild(h('p', 'c-sub', 'Apps I built with Claude and host myself on GitHub Pages. Open one and try it.'));
+    var pgrid = h('div', 'c-foot');
+    projEls.forEach(function (d) {
+      var a = d.querySelector('.meta a');
+      var card = h('div', 'card');
+      card.appendChild(h('h3', null, 'Web app'));
+      card.appendChild(h('div', 'p-name', d.querySelector('h3').textContent));
+      var pt = d.querySelector('li').textContent.replace(/^Built with Claude: /, '');
+      card.appendChild(h('p', 'p-txt', pt.charAt(0).toUpperCase() + pt.slice(1)));
+      var open = h('a', 'p-open', 'Open the app ↗'); open.href = a.href; open.target = '_blank'; open.rel = 'noopener';
+      card.appendChild(open);
+      pgrid.appendChild(card);
+    });
+    proj.appendChild(pgrid); wrap.appendChild(proj);
+  }
 
   /* education, community, contact */
   var foot = h('div', 'rv');
