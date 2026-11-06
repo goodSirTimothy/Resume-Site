@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
 <title>Tim Clifton | Site Reliability Engineer</title>
 <meta name="description" content="Site Reliability Engineer with 6+ years building observability, resilience, and performance practices for AWS-hosted applications.">
 <meta property="og:type" content="profile">
@@ -14,19 +16,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Tim Clifton",
-  "jobTitle": "Site Reliability Engineer",
-  "address": { "@type": "PostalAddress", "addressLocality": "Princeton", "addressRegion": "MN", "addressCountry": "US" },
-  "worksFor": { "@type": "Organization", "name": "Cognizant" },
-  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Rasmussen College" },
-  "sameAs": ["https://linkedin.com/in/tim-clifton-75tc"],
-  "knowsAbout": ["Site reliability engineering", "Observability", "Splunk", "ELK Stack", "AWS", "Disaster recovery", "SLIs and SLOs", "Performance testing", "Infrastructure as code", "Terraform", "CloudFormation", "CI/CD"]
-}
-</script>
 <style>
 /* Layout: one reading column; each section is a label rail beside its content, stacking on phones. */
 :root {
@@ -364,10 +353,10 @@ html[data-view="console"] #dl { background: #0f1c20; color: #e2eef0; border-colo
   <header>
     <div class="role">Site Reliability Engineer</div>
     <h1>Tim Clifton</h1>
-    <p class="summary">Site Reliability Engineer with 6+ years building observability, resilience, and performance practices for AWS-hosted applications. Designed 100+ Splunk dashboards, rolled out AWS Resilience Hub across 25+ application teams, and set logging standards with 50+ teams. Led disaster recovery exercises, automated failover for 10+ applications, defined SLIs and SLOs, and trained new SREs. Built internal web tools with Copilot (Claude Sonnet) for failover execution, Jira story creation, and Step Function viewing, plus an on-call case tracker and an operations workbench that brings them together.</p>
+    <p class="summary">Site Reliability Engineer with 6+ years building observability, resilience, and performance practices for AWS-hosted applications. Designed 100+ Splunk dashboards and set logging standards with 50+ teams. Led disaster recovery exercises, automated failover for 10+ applications, defined SLIs and SLOs, and trained new SREs. Built internal web tools with Copilot (Claude Sonnet) for failover execution, Jira story creation, and Step Function viewing, plus an on-call case tracker and an operation workbench that brings them together.</p>
     <ul class="contact">
       <li>Princeton, MN · Remote</li>
-      <li><a class="addr" id="email-text" href="mailto:TimothyClifton52+JobApplication@gmail.com">TimothyClifton52+JobApplication<wbr>@gmail.com</a><button class="btn" id="copy-email" type="button">Copy</button></li>
+      <li><a class="addr" id="email-text" href="#" rel="nofollow noopener">Email (needs JavaScript)</a><button class="btn" id="copy-email" type="button">Copy</button></li>
       <li><a href="https://linkedin.com/in/tim-clifton-75tc" target="_blank" rel="noopener">linkedin.com/in/tim-clifton-75tc</a></li>
     </ul>
   </header>
@@ -382,14 +371,11 @@ html[data-view="console"] #dl { background: #0f1c20; color: #e2eef0; border-colo
           <ul class="bullets">
             <li>Established SLOs and defined SLIs with engineering teams, informed by performance testing and production metrics.</li>
             <li>Led disaster recovery exercises and runbook creation: executed failover tests, updated Route 53 and CloudFront, and validated cross-region replication for S3 and databases. Automated failover steps for 10+ applications, reducing manual intervention during outages.</li>
-            <li>Developed a web UI with Copilot (Claude Sonnet) that generates the failover command and sends it through a Python layer to the AWS CLI, removing manual command double-checking and Confluence page lookups and simplifying role switches and failover/failback between production and contingency.</li>
-            <li>Created a Jira story generator that outputs CSVs for bulk upload to the new Jira space, replacing templates lost in the Jira migration (10–15 stories per engagement), and a viewer for Resiliency Automation Step Functions.</li>
-            <li>Built an on-call case tracker where engineers paste case and alert details from Sentinus and create stories for knowledge-base (KB) articles and for automation that monitors or resolves those cases, helping the team avoid duplicate work.</li>
-            <li>Built the Operations Workbench, a navigation hub hosted on GitLab Pages that links and displays the team's HTML tools in one place; integrated tools load inside the page and others, such as Sentinus, open in a new tab.</li>
+            <li>Developed a web UI with Copilot (Claude Sonnet) that generates the failover command and sends it through a Python layer to the AWS CLI, removing documentation lookups, SNS message double-checking, and copying new SNS commands each time. Saves about 5 minutes per message, gives app teams confidence they send the correct failover message every time, and simplifies role switches and failover/failback between production and contingency.</li>
+            <li>Built four more internal tools with Copilot (Claude Sonnet): a Jira story generator that outputs CSVs for bulk upload (10–15 stories per engagement) after the Jira migration removed templates; a viewer for Resiliency Automation Step Functions; an on-call case tracker that turns alert and case details into knowledge-base (KB) and automation stories to avoid duplicate work; and an operation workbench that links and displays the team's HTML tools in one place. All five tools deploy through GitLab Pages CI/CD.</li>
             <li>Designed and deployed 100+ multi-panel Splunk dashboards covering traffic/load, latency, errors, and saturation, built from application logs and AWS metrics (mstats).</li>
             <li>Built log-based Splunk alerts for 10+ applications (latency, error rate, saturation, traffic) with email escalation to app owners, and provisioned CloudWatch alerting for ECS, DynamoDB, Lambda, and Step Functions through Monitor as Code pipelines.</li>
-            <li>Rolled out AWS Resilience Hub across 25+ application teams to surface primary and secondary region risks and prioritize remediation; shaped feature and functional requirements to increase its value to application owners.</li>
-            <li>Set and enforced logging standards with 50+ application teams.</li>
+            <li>Set and enforced logging standards with 50+ application teams, and earlier rolled out AWS Resilience Hub across 25+ teams to surface primary and secondary region risks.</li>
             <li>Maintained JMeter and LoadRunner scripts to support load testing and capacity planning for application owners.</li>
             <li>Onboarded new SREs on Splunk queries, regex, and operational playbooks, and recorded 20 short training videos (15 Splunk dashboard, 5 AWS alarm) to shorten ramp-up.</li>
             <li>Cover L1 on-call on a six-week rotation: investigate AWS alerts and validate IT service request (ITSR) shakeouts against knowledge-base (KB) procedures, closing alerts that meet KB closure criteria and escalating to L2 when they don't or when validation access is missing.</li>
@@ -463,12 +449,8 @@ html[data-view="console"] #dl { background: #0f1c20; color: #e2eef0; border-colo
         </ul></dd>
         <dt>Automation and tooling</dt>
         <dd><ul class="chips">
-          <li><button class="chip" type="button" data-match="infrastructure as code">Infrastructure as code</button></li>
-          <li><button class="chip" type="button">Terraform</button></li>
-          <li><button class="chip" type="button">CloudFormation</button></li>
-          <li><button class="chip" type="button">CI/CD</button></li>
-          <li><button class="chip" type="button">GitLab Pages</button></li>
-          <li><button class="chip" type="button" data-match="web UI|Copilot|automated failover|failover command|bulk upload|story generator|case tracker|Operations Workbench">Internal web UIs</button></li>
+          <li><button class="chip" type="button" data-match="CI/CD|GitLab Pages">CI/CD (GitLab Pages)</button></li>
+          <li><button class="chip" type="button" data-match="web UI|Copilot|automated failover|failover command|bulk upload|story generator|case tracker|Operation Workbench">Internal web UIs</button></li>
         </ul></dd>
         <dt>Programming</dt>
         <dd><ul class="chips">
@@ -502,7 +484,7 @@ html[data-view="console"] #dl { background: #0f1c20; color: #e2eef0; border-colo
           <li><button class="chip" type="button">Linux (Ubuntu)</button></li>
           <li><button class="chip" type="button">Windows</button></li>
           <li><button class="chip" type="button">Jira</button></li>
-          <li><button class="chip" type="button">Confluence</button></li>
+          <li><button class="chip" type="button">Wiki documentation</button></li>
         </ul></dd>
         <dt>Additional</dt>
         <dd><ul class="chips">
@@ -587,6 +569,19 @@ html[data-view="console"] #dl { background: #0f1c20; color: #e2eef0; border-colo
   <button class="btn" id="bar-clear" type="button">Clear</button>
 </div>
 
+<script>
+/* The address is assembled here so it never appears in the page source. */
+(function () {
+  var a = document.getElementById('email-text');
+  if (!a) return;
+  var u = ['Timothy', 'Clifton52', '+Job', 'Application'].join(''), d = ['gm', 'ail'].join('') + '.' + 'com';
+  a.textContent = '';
+  a.appendChild(document.createTextNode(u));
+  a.appendChild(document.createElement('wbr'));
+  a.appendChild(document.createTextNode('@' + d));
+  a.href = 'mailto:' + u + '@' + d;
+})();
+</script>
 <script>
 (function () {
   'use strict';
@@ -750,8 +745,8 @@ html[data-view="console"] #dl { background: #0f1c20; color: #e2eef0; border-colo
   var CATS = [
     ['Automation', /web UI|story generator|case tracker|Workbench/i, '#58d39b'],
     ['On-call', /on-call/i, '#f28b6b'],
-    ['Reliability', /\bSLOs?\b|disaster recovery|Resilience Hub/i, '#7cc4ce'],
     ['Observability', /dashboards|alerts|logging standards|Kibana|Logstash|Filebeat/i, '#a99bf0'],
+    ['Reliability', /\bSLOs?\b|disaster recovery|Resilience Hub/i, '#7cc4ce'],
     ['Performance', /JMeter|LoadRunner/i, '#f2b95b'],
     ['People', /Onboarded|Mentor|Guided|Taught|Demonstrated/i, '#f08fb0']
   ];
@@ -896,7 +891,7 @@ html[data-view="console"] #dl { background: #0f1c20; color: #e2eef0; border-colo
   sig.appendChild(h('h2', 'c-h', 'Signals'));
   sig.appendChild(h('p', 'c-sub', 'The numbers behind the work, straight from my experience.'));
   var tiles = h('div', 'tiles');
-  [[6, '+', 'years in SRE'], [100, '+', 'Splunk dashboards designed'], [25, '+', 'teams on AWS Resilience Hub'], [50, '+', 'teams on logging standards'], [10, '+', 'apps with automated failover'], [20, '', 'training videos recorded']].forEach(function (s) {
+  [[6, '+', 'years in SRE'], [100, '+', 'Splunk dashboards designed'], [50, '+', 'teams on logging standards'], [10, '+', 'apps with automated failover'], [5, ' min', 'saved per failover message (approx.)'], [20, '', 'training videos recorded']].forEach(function (s) {
     var t = h('div', 'tile');
     var big = h('div', 'big'); var num = h('span', 'num', String(s[0])); num.setAttribute('data-to', s[0]);
     big.appendChild(num); big.appendChild(document.createTextNode(s[1]));
@@ -913,11 +908,11 @@ html[data-view="console"] #dl { background: #0f1c20; color: #e2eef0; border-colo
       line: 'Generates failover commands and runs them through a Python layer to the AWS CLI',
       badge: 'Highest impact',
       rows: [
-        ['The problem', 'Failover and failback between production and contingency meant checking and double-checking the command by hand and loading a Confluence page first.'],
+        ['The problem', 'Every failover or failback between production and contingency meant checking a documentation page, double-checking the SNS message, and copying new SNS commands each time.'],
         ['What it does', 'A web UI that generates the failover command, then sends it through a Python layer to the AWS CLI.'],
-        ['The impact', 'No more manual command double-checking or Confluence lookups, and switching roles and failing over or back between production and contingency is simpler. It is the tool with the biggest impact so far; adoption is still early because it is freshly built.']
+        ['The impact', 'Saves about 5 minutes per message, and gives app teams confidence they are sending the correct failover message every time. Switching roles and failing over or back between production and contingency is also simpler. It is the tool with the biggest impact so far; adoption is still early because it is freshly built.']
       ],
-      stack: ['Copilot (Claude Sonnet)', 'Python', 'AWS CLI']
+      stack: ['Copilot (Claude Sonnet)', 'Python', 'AWS CLI', 'GitLab Pages']
     },
     {
       name: 'Jira story generator',
@@ -935,22 +930,22 @@ html[data-view="console"] #dl { background: #0f1c20; color: #e2eef0; border-colo
       rows: [
         ['What it does', 'A web UI for viewing the Resiliency Automation Step Functions.']
       ],
-      stack: ['Copilot (Claude Sonnet)']
+      stack: ['Copilot (Claude Sonnet)', 'GitLab Pages']
     },
     {
       name: 'On-call case and automation tracker',
-      line: 'Turns Sentinus cases and alerts into KB and automation stories',
+      line: 'Turns alert and case details into KB and automation stories',
       rows: [
-        ['What it does', 'Engineers copy and paste case and alert details from Sentinus, then create stories to get knowledge-base (KB) articles written and automation built to monitor or resolve those cases.'],
+        ['What it does', 'Engineers copy and paste case and alert details from our alerting and case platform, then create stories to get knowledge-base (KB) articles written and automation built to monitor or resolve those cases.'],
         ['The goal', 'Keep the team from doing duplicate work on repeat cases.']
       ],
-      stack: ['Copilot (Claude Sonnet)']
+      stack: ['Copilot (Claude Sonnet)', 'GitLab Pages']
     },
     {
-      name: 'Operations Workbench',
+      name: 'Operation Workbench',
       line: 'One navigation hub for every internal tool',
       rows: [
-        ['What it does', 'A navigation tool that links and displays all of the team\'s HTML tools in one place. Integrated tools load inside the page; additional tools, like Sentinus, open in a new tab.'],
+        ['What it does', 'A navigation tool that links and displays all of the team\'s HTML tools in one place. Integrated tools load inside the page; additional tools open in a new tab.'],
         ['How it ships', 'Each tool\'s HTML and UI is hosted through GitLab Pages deployment.']
       ],
       stack: ['Copilot (Claude Sonnet)', 'HTML', 'GitLab Pages']
